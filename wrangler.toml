@@ -1,0 +1,18 @@
+# Board Clerk MCP worker. Per-board state is the BoardState durable object.
+name = "lumegrid-board-clerk-v02"
+account_id = "1dc74752b630384835dda65c7955c1bf"
+main = "src/index.js"
+compatibility_date = "2026-09-30"
+workers_dev = true
+preview_urls = false
+
+[[durable_objects.bindings]]
+name = "BOARD_STATE"
+class_name = "BoardState"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["BoardState"]
+
+[vars]
+DEMO_MODE = "synthetic"
